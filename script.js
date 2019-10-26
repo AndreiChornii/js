@@ -1,15 +1,21 @@
 'use strict'
 
 var names = ['vasia', 'petia', 'anya', 'kolya'];
+var cities = ['dnepr', 'kiev', 'odessa', 'lviv'];
 
-var container = document.querySelector('#block');
+function renderList(data, containerId) {
+    var container = document.querySelector(containerId);
 
-console.log(container);
+    console.log(container);
 
-var res = '';
+    var res = '';
 
-for (const name of names) {
-    res += `<li>${name}</li>`;
+    for (const item of data) {
+        res += `<li>${item}</li>`;
+    }
+    container.innerHTML = res;
+    console.log(res);
 }
-container.innerHTML = res;
-console.log(res);
+renderList(names, '#names');
+renderList(cities, '#cities');
+
